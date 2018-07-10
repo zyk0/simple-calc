@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>калькулятор</title>
+    <link rel="stylesheet" href="css.css">
+	<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+
+<div class="">
+    <table class="calculator">
+		<td colspan="4">
+			<p class="panel"> &orarr; калькулятор  <span class="mode">обычный</span></p>
+		</td>
+        <tr>
+            <td colspan="4">
+                <input type="text" value="0"  class="screen" id="screen">
+            </td>
+        </tr>
+        <tr>
+		<!--базовый-->
+            <td>
+                <button class="btn" id="c">c</button>
+            </td>
+			<td>
+                <button class="btn" id="decimal">.</button>
+            </td>
+			<td>
+                <button class="btn" id="square-root">&#8730;</button>
+            </td>
+			<td>
+                <button value="Деление;" class="btn operation">/</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn number">7</button>
+            </td>
+            <td>
+                <button class="btn number">8</button>
+            </td>
+            <td>
+                <button class="btn number">9</button>
+            </td>
+			<td>
+                <button value="Умножение;" class="btn operation">*</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn number">4</button>
+            </td>
+            <td>
+                <button class="btn number">5</button>
+            </td>
+            <td>
+                <button class="btn number">6</button>
+            </td>
+            <td>
+                <button value="Сложение;" class="btn operation">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn number">1</button>
+            </td>
+            <td>
+                <button class="btn number">2</button>
+            </td>
+            <td>
+                <button class="btn number">3</button>
+            </td>
+			
+			<td>
+                <button value="Вычитание;" class="btn operation">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button class="btn btn-null number">0</button>
+            </td>
+			<td>
+                <button value="Результат." class="btn btn-equal operation" id="result">=</button>
+            </td>
+        </tr>
+		<!--инженерный 
+		<tr>
+			<td>
+                <button class="btn">sin</button>
+            </td>
+            <td>
+                <button class="btn">cos</button>
+            </td>
+            <td>
+                <button class="btn">Mod</button>
+            </td>
+			<td>
+                <button class="btn">x<sup>2</sup></button>
+            </td>
+        </tr>
+		-->
+		<!--научый 
+		<tr>
+			<td>
+                <button class="btn">OR</button>
+            </td>
+            <td>
+                <button class="btn">AND</button>
+            </td>
+            <td>
+                <button class="btn">&crarr;</button>
+            </td>
+			<td>
+                <button class="btn">&frac38;</button>
+            </td>
+        </tr>
+		-->
+		<!-- расширенный
+		<tr>
+			<td>
+                <button class="btn">%</button>
+            </td>
+            <td>
+                <button class="btn" id="back"><-</button>
+            </td>
+            <td>
+                <button class="btn" id="">+/-</button>
+            </td>
+			<td>
+                <button class="btn" id="square-root">&#8730;</button>
+            </td>
+        </tr>
+		-->
+    </table>
+<p class="remarka">
+basic calculator<br>
+on vanilla js<br>
+под Opera,Chrome. FF bug(31:9)<br>
+for exbico<br>
+BG!<br>
+</p>
+</div>
+<script src="js.js"></script>
+</body>
+</html>
