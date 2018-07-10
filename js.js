@@ -2,11 +2,11 @@ var numbers 	 = document.querySelectorAll('.number');
 var operations   = document.querySelectorAll('.operation');
 var decimalBtn   = document.getElementById('decimal');
 var display 	 = document.getElementById('screen');
-var clearBtns 	 = document.querySelectorAll('.clear-btn');
+var clearBtn 	 = document.getElementById('c');
 var square 		 = document.getElementById('square-root');
-var activenumber = 0;    //
+var activenumber = 0;    	//
 var newnumber 	 = false;  //
-var expectoperat = ''; // 
+var expectoperat = ''; 	  // 
 
 for (var i = 0; i < numbers.length; i++) {
     var number = numbers[i];
@@ -24,12 +24,10 @@ for (var i=0; i<operations.length; i++) {
     });
 };
 //clear
-for (var i = 0; i < clearBtns.length; i++) {
-    var clearBtn = clearBtns[i];
-    clearBtn.addEventListener('click', function (eventmouse) {
+clearBtn.addEventListener('click', function (eventmouse) {
         clear(eventmouse.srcElement.id);		//
+		console.log('клик по кнопке: ' + eventmouse.target.textContent);
     });
-};
 //
 decimalBtn.addEventListener('click', decimal,
 	function(eventmouse) {
@@ -41,7 +39,7 @@ decimalBtn.addEventListener('click', decimal,
 function presss(number) {
     if (newnumber) {
         display.value = number;
-        newnumber = false;
+        newnumber = null;//newnumber = false;
     } else {
         if (display.value === '0') {
             display.value = number;
@@ -53,21 +51,22 @@ function presss(number) {
 
 function operation(action) {
     var temporaryvar = display.value;//
+	var tempvar = parseFloat(temporaryvar); //tidy up
     if (newnumber && expectoperat !== '=') {
         display.value = activenumber;
     } else {
         newnumber = true;
         if (expectoperat === '+') {
-            activenumber += parseFloat(temporaryvar); //
+            activenumber += tempvar; //
         } else if (expectoperat === '-') {
-            activenumber -= parseFloat(temporaryvar);
+            activenumber -= tempvar;
         } else if (expectoperat === '*') {
-            activenumber *= parseFloat(temporaryvar);
+            activenumber *= tempvar;
         } else if (expectoperat === '/') {
-			activenumber /= parseFloat(temporaryvar);
+			activenumber /= tempvar;
         }
 		else {
-            activenumber = parseFloat(temporaryvar);
+            activenumber = tempvar;
         };
         display.value = activenumber;
 		if (display.value === 'Infinity') {
@@ -105,12 +104,11 @@ function decimal() {
 };
 // clear C
 function clear(id) {
-	if (id === 'c' || event.keyCode === 67) {
+	//tidy up
         display.value = '0';
         newnumber = true;
         activenumber = 0;
         expectoperat = '';
-    };
 };
 
 //Math.sqrt
